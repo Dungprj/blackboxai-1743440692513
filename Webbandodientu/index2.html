@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product Detail Page</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="#">Home</a> &gt; <a href="#">Men</a>
+            </nav>
+
+            <div class="product-detail">
+                <!-- Hình ảnh sản phẩm -->
+                <div class="product-images">
+                    <img
+                        src="https://via.placeholder.com/400x500"
+                        alt="Product Image 1"
+                    />
+                    <img
+                        src="https://via.placeholder.com/400x500"
+                        alt="Product Image 2"
+                    />
+                    <img
+                        src="https://via.placeholder.com/400x500"
+                        alt="Product Image 3"
+                    />
+                    <img
+                        src="https://via.placeholder.com/400x500"
+                        alt="Product Image 4"
+                    />
+                </div>
+
+                <!-- Thông tin sản phẩm -->
+                <div class="product-info">
+                    <h1 class="product-title">Title Product</h1>
+                    <p class="product-price">$1,879.99</p>
+                    <p class="product-desc">
+                        Amet, elit tellus, nisi odio velit ut. Euismod sit arcu,
+                        quisque arcu purus orci leo.
+                    </p>
+
+                    <!-- Chọn size -->
+                    <div class="product-size">
+                        <label for="size-select">Size</label>
+                        <select id="size-select">
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                        </select>
+                    </div>
+
+                    <!-- Số lượng -->
+                    <div class="product-quantity">
+                        <button
+                            class="qty-btn"
+                            type="button"
+                            onclick="changeQty(-1)"
+                        >
+                            -
+                        </button>
+                        <input id="qty-input" type="number" value="1" min="1" />
+                        <button
+                            class="qty-btn"
+                            type="button"
+                            onclick="changeQty(1)"
+                        >
+                            +
+                        </button>
+                    </div>
+
+                    <!-- Nút hành động -->
+                    <div class="actions">
+                        <button class="btn-add-cart">Add to cart</button>
+                        <div class="divider">OR</div>
+                        <button class="btn-buy-now">Buy Now</button>
+                    </div>
+
+                    <!-- Thanh toán an toàn -->
+                    <div class="secure-checkout">
+                        <p class="guarantee">
+                            GUARANTEED <span>SAFE</span> CHECKOUT
+                        </p>
+                        <div class="payment-methods">
+                            <img
+                                src="https://via.placeholder.com/40x25?text=Visa"
+                                alt="Visa"
+                            />
+                            <img
+                                src="https://via.placeholder.com/40x25?text=MC"
+                                alt="MasterCard"
+                            />
+                            <img
+                                src="https://via.placeholder.com/40x25?text=PayPal"
+                                alt="Paypal"
+                            />
+                            <img
+                                src="https://via.placeholder.com/40x25?text=Amex"
+                                alt="American Express"
+                            />
+                            <img
+                                src="https://via.placeholder.com/40x25?text=BTC"
+                                alt="Bitcoin"
+                            />
+                        </div>
+                        <p>Your Payment is 100% Secure</p>
+                    </div>
+
+                    <!-- Thông tin khác -->
+                    <div class="product-meta">
+                        <p>Brand: Brand 03</p>
+                        <p>SKU: 87654</p>
+                        <p>Category: Men</p>
+                    </div>
+                </div>
+                <!-- end product-info -->
+            </div>
+            <!-- end product-detail -->
+        </div>
+
+        <script>
+            function changeQty(change) {
+                const qtyInput = document.getElementById('qty-input');
+                let currentVal = parseInt(qtyInput.value, 10);
+                let newVal = currentVal + change;
+                if (newVal < 1) newVal = 1;
+                qtyInput.value = newVal;
+            }
+        </script>
+    </body>
+</html>
