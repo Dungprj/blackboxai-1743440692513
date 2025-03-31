@@ -1,0 +1,35 @@
+@use '@styles/mixin.module.scss' as mixins;
+@use '@styles/variable.module.scss' as variables;
+
+.btn {
+    @include mixins.btn(100%, 42px, 3px, variables.$primary_color);
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+
+    &:hover {
+        transition: background-color 300ms;
+    }
+}
+
+.primaryBtn {
+    background-color: variables.$primary_color;
+    color: variables.$white_color;
+
+    &:hover {
+        background-color: transparent;
+        color: variables.$primary_color;
+        border: 1px solid variables.$primary_color;
+    }
+}
+
+.secondaryBtn {
+    background-color: variables.$white_color;
+    color: variables.$primary_color;
+    border: 1px solid variables.$primary_color;
+
+    &:hover {
+        background-color: variables.$primary_color;
+        color: variables.$white_color;
+    }
+}
